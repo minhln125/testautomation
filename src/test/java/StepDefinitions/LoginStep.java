@@ -14,8 +14,8 @@ public class LoginStep {
 	@Given("on login page")
 	public void on_login_page() {
 		String projectPath = System.getProperty("user.dir");
-	    //System.out.println("project path is:"+ projectPath);
-	    System.setProperty("webdriver.chrome.driver","C:/Users/Admin/Desktop/New folder/CucumberJava/src/test/resources/driver/chromedriver.exe");
+	    System.out.println("project path is:"+ projectPath);
+	    System.setProperty("webdriver.chrome.driver",projectPath+"/src/test/resources/driver/chromedriver.exe");
 	    driver = new ChromeDriver();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
