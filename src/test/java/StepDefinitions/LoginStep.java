@@ -17,7 +17,7 @@ import org.openqa.selenium.By;
 
 import io.cucumber.java.en.*;
 
-public class LoginSteps {	
+public class start {	
 	public void Setup() throws MalformedURLException {	
 	     ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless","--no-sandbox","--disable-gpu");
@@ -28,7 +28,7 @@ public class LoginSteps {
         desiredCapabilities.setPlatform(Platform.LINUX);
         WebDriver driver = new RemoteWebDriver(new URL("http://54.169.209.229:4444/"), options);
 	}
-
+}
 public class LoginStep {
 	@Given("on login page")
 	public void on_login_page() {
