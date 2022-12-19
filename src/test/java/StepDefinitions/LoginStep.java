@@ -1,25 +1,35 @@
 package StepDefinitions;
-
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.By;
+
 
 import io.cucumber.java.en.*;
 
+public class LoginSteps {	
+	public void Setup() throws MalformedURLException {	
+	     ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless","--no-sandbox","--disable-gpu");
+        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+        desiredCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
+        options.merge(desiredCapabilities);
+        desiredCapabilities.setBrowserName("chrome");
+        desiredCapabilities.setPlatform(Platform.LINUX);
+        WebDriver driver = new RemoteWebDriver(new URL("http://54.169.209.229:4444/"), options);
+	}
+
 public class LoginStep {
-	WebDriver driver = null;
-	@Given("on login page")
-	public void on_login_page() {
-		String projectPath = System.getProperty("user.dir");
-	    System.out.println("project path is:"+ projectPath);
-	    System.setProperty("webdriver.chrome.driver",projectPath+"/src/test/resources/driver/chromedriver.exe");
-	    driver = new ChromeDriver();
-	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	    driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-//	    driver.manage().window().maximize();
 	    driver.navigate().to("https://skhcn.erp.meu-solutions.com/");
 	}
 
