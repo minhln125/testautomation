@@ -26,7 +26,7 @@ public class start {
         options.merge(desiredCapabilities);
         desiredCapabilities.setBrowserName("chrome");
         desiredCapabilities.setPlatform(Platform.LINUX);
-        WebDriver driver = new RemoteWebDriver(new URL("http://54.169.209.229:4444/"), options);
+        WebDriver driver = new RemoteWebDriver(new URL("http://52.221.229.64:4444/"), options);
 	}
 }
 public class LoginStep {
