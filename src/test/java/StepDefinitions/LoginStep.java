@@ -34,11 +34,15 @@ public class LoginStep {
 	public void press_login_page() {
 	  System.out.println("press login button");
 	  driver.findElement(By.xpath("//*[@id=\"login-btn\"]")).click();
+	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 	}
 
 	@Then("Navigate to homepage")
 	public void navigate_to_homepage() {
 	    System.out.println("navigate to homepage");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	    driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 	    driver.findElement(By.xpath("//*[@id=\"kt_header_brand\"]/div[1]/a/img[1]")).isDisplayed();
 	    driver.close();
 	    driver.quit();
