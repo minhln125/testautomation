@@ -31,7 +31,8 @@ public class LoginSteps {
 
 public class LoginStep {
 	@Given("on login page")
-		    driver.navigate().to("https://skhcn.erp.meu-solutions.com/");
+	public void on_login_page() {
+		 driver.navigate().to("https://skhcn.erp.meu-solutions.com/");
 	}
 
 	@When("Enter user name and password")
